@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+            var stripe = Stripe('pk_test_51JTrXPKDcwwl1Oe4ruMMSSeMbkN4UpcWTTX63KSESmrXJZtYEehiHgGVumzCUFloG5csmIwxe2ZrHOj4XqVXezDj00JPjSoMPw');
+        </script>
+    </head>
+    <title>Stripe fun and stuff</title>
+    <body>
+        <h3>SetupIntent Boi</h3>
+        <form action="setupIntentConfirmed" method="POST">
+            <script
+              src="//checkout.stripe.com/v2/checkout.js"
+              class="stripe-button"
+              data-key="<%= key %>"
+              data-amount="7000"
+              data-currency="usd"
+              data-name="Bob Ross"
+              data-description="Buy happy trees"
+              data-Locale="auto"
+              >
+            </script>
+            <!-- <script>
+                stripe.confirmCardSetup('{SETUP_INTENT_CLIENT_SECRET}', {
+                    payment_method: {
+                    card: cardElement,
+                    billing_details: {
+                        name: 'Jenny Rosen',
+                    },
+                    },
+                })
+                .then(function(result) {
+                    // Handle result.error or result.setupIntent
+                });
+            </script> -->
+        </form>
+        <p><%= data %></p>
+    </body>
+</html>

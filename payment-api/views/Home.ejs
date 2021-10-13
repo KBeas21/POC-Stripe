@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <title>Stripe fun and stuff</title>
+    <body>
+        <h3>Welcome to Stripe fun and stuff</h3>
+        <h4>this is the key <%= key %></h4>
+        <form action="payment" method="POST">
+            <script
+              src="//checkout.stripe.com/v2/checkout.js"
+              class="stripe-button"
+              data-key="<%= key %>"
+              data-amount="7000"
+              data-currency="usd"
+              data-name="Bob Ross"
+              data-description="Buy happy trees"
+              data-Locale="auto"
+              >
+            </script>
+        </form>
+        <br/>
+        <br/>
+        <br/>
+        <form action="payment-processor/stripe/setup-intents" method="POST">
+            <script
+              src="//checkout.stripe.com/v2/checkout.js"
+              class="stripe-button"
+              data-key="<%= key %>"
+              data-amount="7000"
+              data-currency="usd"
+              data-name="Bob Ross"
+              data-description="Buy happy trees"
+              data-Locale="auto"
+              >
+            </script>
+        </form>
+    </body>
+</html>
